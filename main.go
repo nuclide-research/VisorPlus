@@ -8,14 +8,8 @@ import (
 )
 
 const banner = `
- __   ___                 ____  _
- \ \ / (_)___  ___  _ __ |  _ \| |_   _ ___
-  \ V /| / __|/ _ \| '__|| |_) | | | | / __|
-   | | | \__ \ (_) | |   |  __/| | |_| \__ \
-   |_| |_|___/\___/|_|   |_|   |_|\__,_|___/
-
-  AI/LLM Infrastructure Hunt & Assessment Platform
-  github.com/Nicholas-Kloster/VisorPlus · @nuclide
+  VisorPlus · AI/LLM Hunt & Assessment
+  github.com/Nicholas-Kloster/VisorPlus
 `
 
 func usage() {
