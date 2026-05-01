@@ -224,6 +224,29 @@ VisorPlus orchestrates these tools — install them individually or via `visorpl
 
 ---
 
+## Use with Claude Code
+
+VisorPlus orchestrates the entire NuClide AI/LLM hunt workflow — use Claude Code to drive it intelligently across a target.
+
+```
+I have VisorPlus installed at ~/Tools/VisorPlus/. Read README.md, then:
+1. Run ./visorplus full against [target: IP/CIDR/org/ASN] and help me interpret the output
+2. Flag any red-model patterns (abliterated, cloud-proxied, offensive AI brands) and prioritize them
+3. After assessment, help me draft the disclosure write-up for the highest-severity finding
+Target: [paste here]
+```
+
+```
+I have a set of Ollama model names from ./visorplus enum [IP].
+Read tools/ollama-model-injection.md in AI-LLM-Infrastructure-OSINT, then tell me:
+- Which models are injectable via /api/create
+- Whether any cloud proxy models are present (quota hijack risk)
+- What the highest-impact injection scenario is for this specific target
+Model list: [paste ./visorplus enum output here]
+```
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE)
