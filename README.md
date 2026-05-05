@@ -211,16 +211,29 @@ From the [AI-LLM-Infrastructure-OSINT](https://github.com/Nicholas-Kloster/AI-LL
 
 ## Ecosystem
 
-VisorPlus orchestrates these tools — install them individually or via `visorplus install`:
+VisorPlus orchestrates the **discovery → enumeration → adversarial-test** subset of the NuClide chain. The tools below are auto-installed by `visorplus install`:
 
-| Tool | Role |
-|------|------|
-| [JAXEN](https://github.com/Nicholas-Kloster/JAXEN) | Shodan harvest + empire.db persistence |
-| [VisorSD](https://github.com/Nicholas-Kloster/VisorSD) | Severity-ranked AI/LLM stack audit |
-| [VisorCorpus](https://github.com/Nicholas-Kloster/VisorCorpus) | Adversarial LLM prompt corpus |
-| [BARE](https://github.com/Nicholas-Kloster/BARE) | Semantic exploit matching (Metasploit) |
-| [aimap](https://github.com/Nicholas-Kloster/aimap) | Active AI/ML service enumerator |
-| [AI-LLM-Infrastructure-OSINT](https://github.com/Nicholas-Kloster/AI-LLM-Infrastructure-OSINT) | Verified Shodan dork catalogue |
+| Tool | Role | Auto-installed |
+|------|------|---|
+| [JAXEN](https://github.com/Nicholas-Kloster/JAXEN) | Shodan harvest + empire.db persistence | ✅ |
+| [VisorSD](https://github.com/Nicholas-Kloster/VisorSD) | Severity-ranked AI/LLM stack audit | ✅ |
+| [VisorCorpus](https://github.com/Nicholas-Kloster/VisorCorpus) | Adversarial LLM prompt corpus | ✅ |
+| [BARE](https://github.com/Nicholas-Kloster/BARE) | Semantic exploit matching (Metasploit) | ✅ |
+| [aimap](https://github.com/Nicholas-Kloster/aimap) | Active AI/ML service enumerator | ✅ |
+| [AI-LLM-Infrastructure-OSINT](https://github.com/Nicholas-Kloster/AI-LLM-Infrastructure-OSINT) | Verified Shodan dork catalogue (reference) | — |
+
+The wider NuClide chain extends VisorPlus's output into ledger / scoring / agentic-bench stages. Install these individually as needed:
+
+| Tool | Role | Stage |
+|------|------|------|
+| [VisorGoose](https://github.com/Nicholas-Kloster/VisorGoose) | Government-TLD AI discovery (CT logs + Shodan + DNS) | Discovery (gov TLD) |
+| [VisorGraph](https://github.com/Nicholas-Kloster/VisorGraph) | Seed-polymorphic recon engine; typed provenance graph | Discovery (graph) |
+| [menlohunt](https://github.com/Nicholas-Kloster/menlohunt) | GCP External Attack Surface Management | Discovery (GCP/EASM) |
+| [VisorLog](https://github.com/Nicholas-Kloster/VisorLog) | NuClide findings ledger (NDJSON → SQLite, lifecycle-tracked) | Ledger |
+| [VisorScuba](https://github.com/Nicholas-Kloster/VisorScuba) | OPA/Rego compliance scoring against NuClide AI Security Baseline | Compliance |
+| [VisorAgent](https://github.com/Nicholas-Kloster/VisorAgent) | Agentic LLM injection benchmark (delivers VisorCorpus payloads via real tool-use paths) | Adversarial bench |
+| [VisorRAG](https://github.com/Nicholas-Kloster/VisorRAG) | Agentic recon CLI (RAG-grounded LLM drives 6 live tools, gVisor sandboxed) | Sibling orchestrator |
+| [VisorHollow](https://github.com/Nicholas-Kloster/VisorHollow) | Process-injection detection benchmark (Windows x64) | Adversarial bench (Windows) |
 
 ---
 
