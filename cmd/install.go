@@ -18,31 +18,31 @@ var tools = []tool{
 	{
 		name:   "JAXEN",
 		repo:   "https://github.com/Nicholas-Kloster/JAXEN.git",
-		build:  []string{"go", "build", "-o", "jaxen", "."},
+		build:  []string{"go", "install", "."},
 		binary: "jaxen",
 	},
 	{
 		name:   "VisorSD",
 		repo:   "https://github.com/Nicholas-Kloster/VisorSD.git",
-		build:  []string{"go", "build", "-o", "visorsd", "./cmd/shodan-audit"},
+		build:  []string{"go", "install", "./cmd/shodan-audit"},
 		binary: "visorsd",
 	},
 	{
 		name:   "VisorCorpus",
 		repo:   "https://github.com/Nicholas-Kloster/VisorCorpus.git",
-		build:  []string{"go", "build", "-o", "visorcorpus", "."},
+		build:  []string{"go", "install", "./cmd/visorcorpus"},
 		binary: "visorcorpus",
 	},
 	{
 		name:   "BARE",
 		repo:   "https://github.com/Nicholas-Kloster/BARE.git",
-		build:  []string{"cargo", "build", "--release"},
+		build:  []string{"cargo", "install", "--path", "."},
 		binary: "bare",
 	},
 	{
 		name:   "aimap",
 		repo:   "https://github.com/Nicholas-Kloster/aimap.git",
-		build:  []string{"go", "build", "-o", "aimap", "."},
+		build:  []string{"go", "install", "."},
 		binary: "aimap",
 	},
 }
@@ -102,11 +102,15 @@ func Install(_ []string) {
 			continue
 		}
 
-		binPath := filepath.Join(dest, t.binary)
+		gobin := os.Getenv("GOPATH")
+		if gobin == "" {
+			gobin = filepath.Join(os.Getenv("HOME"), "go")
+		}
+		binPath := filepath.Join(gobin, "bin", t.binary)
 		if _, err := os.Stat(binPath); err == nil {
-			ok("%s built → %s", t.name, binPath)
+			ok("%s installed → %s", t.name, binPath)
 		} else {
-			warn("Binary not found at expected path %s", binPath)
+			warn("binary not found at %s — check $GOPATH", binPath)
 		}
 	}
 
