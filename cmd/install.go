@@ -45,6 +45,12 @@ var tools = []tool{
 		build:  []string{"go", "install", "."},
 		binary: "aimap",
 	},
+	{
+		name:   "VisorBishop",
+		repo:   "https://github.com/Nicholas-Kloster/VisorBishop.git",
+		build:  []string{"go", "install", "./cmd/visorbishop"},
+		binary: "visorbishop",
+	},
 }
 
 func Install(_ []string) {

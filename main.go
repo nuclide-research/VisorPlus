@@ -25,6 +25,7 @@ COMMANDS:
   assess <ip>         Full passive recon on a single IP (nmap, whois, passive intel)
   corpus [flags]      Generate adversarial LLM prompt corpus via VisorCorpus
   full   [dork]       End-to-end chain: audit → hunt → enum → flag → assess
+  bishop [flags]      VisorBishop meta-fingerprint for AI observability platforms
 
 FLAGS (full command):
   -key   string       Shodan API key (or set SHODAN_API_KEY env)
@@ -66,6 +67,8 @@ func main() {
 		cmd.Corpus(os.Args[2:])
 	case "full":
 		cmd.Full(os.Args[2:])
+	case "bishop":
+		cmd.Bishop(os.Args[2:])
 	case "help", "--help", "-h":
 		usage()
 	default:
