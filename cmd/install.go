@@ -17,37 +17,37 @@ type tool struct {
 var tools = []tool{
 	{
 		name:   "JAXEN",
-		repo:   "https://github.com/Nicholas-Kloster/JAXEN.git",
+		repo:   "https://github.com/nuclide-research/JAXEN.git",
 		build:  []string{"go", "install", "."},
 		binary: "jaxen",
 	},
 	{
 		name:   "VisorSD",
-		repo:   "https://github.com/Nicholas-Kloster/VisorSD.git",
+		repo:   "https://github.com/nuclide-research/VisorSD.git",
 		build:  []string{"go", "install", "./cmd/shodan-audit"},
 		binary: "visorsd",
 	},
 	{
 		name:   "VisorCorpus",
-		repo:   "https://github.com/Nicholas-Kloster/VisorCorpus.git",
+		repo:   "https://github.com/nuclide-research/VisorCorpus.git",
 		build:  []string{"go", "install", "./cmd/visorcorpus"},
 		binary: "visorcorpus",
 	},
 	{
 		name:   "BARE",
-		repo:   "https://github.com/Nicholas-Kloster/BARE.git",
+		repo:   "https://github.com/nuclide-research/BARE.git",
 		build:  []string{"cargo", "install", "--path", "."},
 		binary: "bare",
 	},
 	{
 		name:   "aimap",
-		repo:   "https://github.com/Nicholas-Kloster/aimap.git",
+		repo:   "https://github.com/nuclide-research/aimap.git",
 		build:  []string{"go", "install", "."},
 		binary: "aimap",
 	},
 	{
 		name:   "VisorBishop",
-		repo:   "https://github.com/Nicholas-Kloster/VisorBishop.git",
+		repo:   "https://github.com/nuclide-research/VisorBishop.git",
 		build:  []string{"go", "install", "./cmd/visorbishop"},
 		binary: "visorbishop",
 	},

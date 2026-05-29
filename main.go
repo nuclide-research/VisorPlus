@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Nicholas-Kloster/VisorPlus/cmd"
+	"github.com/nuclide-research/VisorPlus/cmd"
 )
 
 const banner = `
   VisorPlus · AI/LLM Hunt & Assessment
-  github.com/Nicholas-Kloster/VisorPlus
+  github.com/nuclide-research/VisorPlus
 `
 
 func usage() {

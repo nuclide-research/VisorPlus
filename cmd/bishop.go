@@ -11,7 +11,7 @@ import (
 // VisorBishop is a standalone Go tool; this subcommand is a thin wrapper that
 // delegates to the installed `visorbishop` binary.
 //
-// Source: github.com/Nicholas-Kloster/VisorBishop
+// Source: github.com/nuclide-research/VisorBishop
 func Bishop(args []string) {
 	fs := flag.NewFlagSet("bishop", flag.ExitOnError)
 	input := fs.String("i", "", "Input file with one URL per line (or - for stdin)")
@@ -49,7 +49,7 @@ Kibana, Prometheus, AlertManager, node_exporter, Elasticsearch, etc.
 
 Read-only. No credential testing, no payload fuzzing.
 
-Source: https://github.com/Nicholas-Kloster/VisorBishop`)
+Source: https://github.com/nuclide-research/VisorBishop`)
 	}
 
 	if err := fs.Parse(args); err != nil {
@@ -66,7 +66,7 @@ Source: https://github.com/Nicholas-Kloster/VisorBishop`)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "visorplus bishop: visorbishop binary not found in PATH")
 		fmt.Fprintln(os.Stderr, "  install with:")
-		fmt.Fprintln(os.Stderr, "    go install github.com/Nicholas-Kloster/VisorBishop/cmd/visorbishop@latest")
+		fmt.Fprintln(os.Stderr, "    go install github.com/nuclide-research/VisorBishop/cmd/visorbishop@latest")
 		os.Exit(1)
 	}
 
